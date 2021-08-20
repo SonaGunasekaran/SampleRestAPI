@@ -1,4 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿/*
+ * Project:validating the API services and performing the operations like post,put,get,delete
+ * Author:Sona G
+ * Date:18/08/2021
+ */
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RestSharp;
 using System;
 using System.Net;
@@ -9,8 +14,8 @@ namespace TestRestAPI.PostRequest
     [TestClass]
     public class TestPostWithJsonData
     {
-        private string myToken = "Bearer BQAy03ds0vNU22qlu51xwMai3Y50qrd6f7xhRF5ges1D2GqFLui8Z1DBCKz3ACkFB-TyBzN7atmRSmaa6xDauv5i8rCQPCBU80xvqr8ryxSwpJ--oZYdOjEGeQCq-jlSDaLXeRgKc9AT45dnu-an-CmwrBT-cIQ4amyNYVDFz36P4XIuu2qxZ3K3Qz4cwKABYqfuQgXbJFG47CHQIbX-W-2cK-okdvRXw9iundyKQadeSAgBBtebDdQnajP68HErPcu0pam2hMnEybJlRjr_gYJyGIcE1ol08uLSPNQ7";
-        private string postUrl = "https://api.spotify.com/v1/users/s27dmlg557v3itkvxtlfahdey/playlists";
+        private string myToken = "Bearer BQDfmen6kZdRF1yhFrwha38VPxWdPJkdp1qyO93qrIwea-YWAgenzJKn4ilMfqacYcDu1nyMWjewk_i-4ge6em-dWmjjUddKQDBlfHXflpLCeNWrIyAQZicP3L0IisqMLai0PKLulJFW9nRziylpqq5b0MvdXEzSr4jFdQm81SvXuFrn6lKUR_Vv1WrdNw8foNdDQwhj0-C5N9UcXZ-9Yujw4VJ6L6UAwluh8r-hM84XgMJtDMkFZPWpU0UxBm11UNubNiYKRPhiES9tow0hrrMreoJZXWoh2rXh3erA";
+        private string postUrl = "https://api.spotify.com/v1/playlists/playlists";
         private static IRestResponse restResponse { get; set; }
         [TestMethod]
         public void TestCreatePlaylist()
@@ -19,7 +24,7 @@ namespace TestRestAPI.PostRequest
                                   "\"name\": \"My Playlist 4\"," +
                                   "\"description\": \"New playlist description\"," +
                                   "\"public\":\" false\"" +
-                                "}";
+                              "}";
 
             IRestClient restClient = new RestClient();
             IRestRequest restRequest = new RestRequest(postUrl);
@@ -37,8 +42,5 @@ namespace TestRestAPI.PostRequest
 
            
         }
-
-
-
     }
 }
